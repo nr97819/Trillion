@@ -34,11 +34,6 @@
 
 web 인스턴스 구성
 ```sh
-
-sudo rm * -rf
-
-sudo rm .git -rf
-
 git init
 git config core.sparsecheckout true
 echo 06.SourceCode/04.docker-nginx_#/* >> .git/info/sparse-checkout
