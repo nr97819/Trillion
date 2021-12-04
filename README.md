@@ -1,5 +1,6 @@
 (진행중)
-# 보안 프로젝트를 위한 대상 웹 구성 (의료 마이데이터 서비스 제공 웹 사이트)
+# 보안 프로젝트를 위한 대상 웹 구성 
+##(의료 마이데이터 서비스 제공 웹 사이트)
 
 본 레포지토리에 포함된 항목들:
 
@@ -33,8 +34,16 @@
 
 web 인스턴스 구성
 ```sh
+
+sudo rm * -rf
+
+sudo rm .git -rf
+
 git init
-git remote add origin https://github.com/WonhaWoo/Trillion.git
+git config core.sparsecheckout true
+echo 06.SourceCode/04.docker-nginx_#/* >> .git/info/sparse-checkout
+git pull origin final-pjt-branch
+git remote add origin https://github.com/nr97819/Trillion.git
 git pull origin healers_test
 
 cd 06.SourceCode/04.docker-nginx_#/
@@ -43,7 +52,10 @@ docker-compose up -d --build
 was 인스턴스 구성
 ```sh
 git init
-git remote add origin https://github.com/WonhaWoo/Trillion.git
+git config core.sparsecheckout true
+echo 06.SourceCode/03.flask_one_two_harmony_#/* >> .git/info/sparse-checkout
+git pull origin final-pjt-branch
+git remote add origin https://github.com/nr97819/Trillion.git
 git pull origin healers_test
 
 cd 06.SourceCode/03.flask_one_two_harmony_#/
